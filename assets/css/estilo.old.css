@@ -1,0 +1,181 @@
+﻿html {
+  position: relative;
+  min-height: 100%;
+}
+
+body{
+  font-family: Cambria, Georgia, serif;
+  color: black;
+  background: rgb(240, 240, 240);
+  padding-top: 30px;
+}
+h1{
+  font-style: italic;
+  letter-spacing: -1px;               
+}
+header{
+  position: static;
+  margin: 50px 0;
+}
+.containerr{
+  margin: 0 auto;
+  max-width: 960px;
+}
+
+.logop{
+  position: absolute;
+  display: block;
+  width: 140px;
+  height: 150px;
+}
+.title-fluid{
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  margin-left: 140px;
+  padding: 20px 0;
+  width: 697px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #474747; 
+}
+.title-fluid h1{
+  letter-spacing: 0.2em;
+  font-style: normal;
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+legend{  
+  font-size: 20px;
+  font-style: italic; 
+  color:#000;  
+}
+.date-input-buttons{
+  float:right;
+  margin-top: 8px;
+}
+ 
+.logo{
+  width: 70%;
+}
+
+.alert{
+  margin-top:15px;
+  margin-bottom:1px;
+}
+
+/*Rodapé do Site*/
+.main{
+  padding-bottom: 225px;
+}
+footer{  
+  position: absolute;
+  bottom: 0px;
+  width: 100%;  
+  height: 200px;   
+  background-color: rgb(68, 65, 65);
+  color: #fff;   
+}
+.footer{
+  padding-top: 50px;
+  margin: 0 auto;
+  max-width: 960px;
+}
+footer .logo-pitagoras{
+  margin-top: 20px;
+  float: left;
+}
+footer .logo-kroton{
+  margin-top: 20px;
+  margin-left: 20px;
+  float: left;
+  width: 82px;
+  height: 60px;
+}
+footer a{
+  color: white;
+  text-decoration: none;
+}
+footer a:hover{
+  color: white;
+  text-decoration: underline;
+}
+footer .esc2, .esc2 img{
+  float: right;
+}
+/*Css que se aplica em celulares*/
+div+fieldset{  
+  margin-top: 100px;
+}
+.nome_usuario{
+  font-size: 12px;
+  text-align: right;
+}
+
+ /* Card, Dialog */
+.card {
+  position: relative;
+  padding: 10px;
+  display: inline-block;
+  width: 100%;
+  vertical-align: top;
+  background-color: #fff;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.ripple{
+  overflow:hidden;
+}
+
+.ripple-effect{
+  position: absolute;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background: white;    
+  animation: ripple-animation 2s;
+}
+
+@keyframes ripple-animation {
+  from {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+  to {
+    transform: scale(100);
+    opacity: 0;
+  }
+}  
+
+/* CSS que se aplica a celulares*/
+@media all and (max-width: 768px) {
+  header{
+    position: static;
+    margin: 10px 0;
+  }
+  .logop{
+    position: relative;
+    display: block;
+    width: 140px;
+    height: 150px;
+    margin: auto;
+  }
+  .main{
+    padding-bottom: 25px;
+  }
+/*footer-phone*/
+  footer{
+    position: relative;
+    display: block;
+    width: 100%;
+    /*background-color: #0a1d24;*/
+  }
+  footer div{
+    display: table;
+    margin: 10px;
+  }
+  footer div p{
+    display: none;
+  }
+  footer .esc2{
+    margin-top: 30px;
+  }
+}
