@@ -5,7 +5,12 @@
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-banner": "^0.6.0",
+    "grunt-contrib-clean": "^0.7.0",
+    "grunt-contrib-imagemin": "^1.0.0",
     "grunt-contrib-less": "^1.1.0",
-    "grunt-contrib-uglify": "^0.11.0"
+    "grunt-contrib-uglify": "^0.11.0",
+    "grunt-ftpush": "^0.3.3",
+    "imagemin-mozjpeg": "^5.1.0",
+    "imagemin-pngquant": "^4.2.0"
   }
 }

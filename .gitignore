@@ -1,6 +1,8 @@
 .grunt
 .ftppass
 node_modules
+assets/imgs
+assets/css
 
 .DS_Store
 Thumbs.db

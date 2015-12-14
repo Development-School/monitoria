@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 
-$allowed_domains = array('monitoria', 'domain2.tld');
+$allowed_domains = array('monitoria', 'rodrigoalves.me');
 $default_domain  = 'localhost';
 
 if (in_array($_SERVER['HTTP_HOST'], $allowed_domains, TRUE))
@@ -34,6 +34,9 @@ if (in_array($_SERVER['HTTP_HOST'], $allowed_domains, TRUE))
 else
 {
         $domain = $default_domain;
+}
+if ($domain == 'localhost' or $domain == 'rodrigoalves.me') {
+  $domain .= '/monitoria';
 }
 
 if ( ! empty($_SERVER['HTTPS']) and $_SERVER['HTTPS'] !== 'off' )
