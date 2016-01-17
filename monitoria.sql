@@ -72,11 +72,13 @@ CREATE TABLE tbl_monitores (
   id int(11) UNSIGNED PRIMARY KEY AUTO_INCREMENT,
   id_usuario int(11) UNSIGNED NOT NULL,
   descricao varchar(145) NOT NULL,
+  turno varchar(145) NOT NULL,
+  dia_semana varchar(145) NOT NULL,
   FOREIGN KEY (id_usuario) REFERENCES tbl_usuarios(id) ON DELETE CASCADE ON UPDATE CASCADE
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
-INSERT INTO tbl_monitores (id, id_usuario, descricao)
-VALUES (1, 1, 'Linguagem PHP');
+INSERT INTO tbl_monitores (id, id_usuario, descricao, turno, dia_semana)
+VALUES (1, 1, 'Linguagem PHP', 'Matutino', 'Seg, Qua, Sex');
 
 -- --------------------------------------------------------
 -- Estrutura de Solicitações

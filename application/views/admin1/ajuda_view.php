@@ -27,7 +27,7 @@
 <body>
   <div class="container main">
   <?php /* Chama a View da Barra de navegação*/
-  $dados['ativo'] = 6; $this->load->view('admin/navbar',$dados);?>
+  $dados['ativo'] = 6; $this->load->view('admin1/navbar',$dados);?>
   <div class="row">
   <div class="col-xs-12 col-sm-12 col-md-12">
       <h2>Ajuda&nbsp;<i class="fa fa-question-circle fa-fw fa-lg"></i></h2>

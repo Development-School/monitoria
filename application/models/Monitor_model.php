@@ -11,7 +11,7 @@ class Monitor_model extends MY_Model
 
   public function getMonitores()
   {
-    $this->db->select('tbl_usuarios.id, nome, email, descricao');
+    $this->db->select('tbl_usuarios.id, nome, email, descricao, turno, dia_semana');
     $this->db->from( $this->tabela );
     $this->db->join('tbl_usuarios', 'tbl_usuarios.id = tbl_monitores.id_usuario', 'inner');
     return $this->db->get()->result();

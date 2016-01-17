@@ -19,7 +19,7 @@ module.exports = function(grunt) {
       main: {
         src: [
               'assets/js/jquery-2.1.4.min.js',
-              'assets/js/bootstrap.min.js',
+              'assets/js/bootstrap.js',
               'assets/js/jquery.mask.min.js',
               'assets/js/main.js'
               ],

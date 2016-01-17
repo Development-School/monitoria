@@ -18,7 +18,7 @@ class Alteracadastro extends CI_Controller
         $id = $this->session->userdata('id');
         $dados['cursos'] = $this->usuario->get('tbl_cursos');
         $dados['usuario'] = $this->usuario->getById($id);
-        $this->load->view('admin/alteracao_cadastro_view',$dados);
+        $this->load->view('admin1/alteracao_cadastro_view',$dados);
 
     }
     public function altera(){

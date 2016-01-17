@@ -7,7 +7,7 @@ $this->load->view('head');//Chama a view head.html?>
 <div id="wrap">
   <main class="container">
   <?php /* Chama a View da Barra de navegação*/
-  $dados['ativo'] = 5; $this->load->view('admin/navbar',$dados);?>
+  $dados['ativo'] = 5; $this->load->view('admin1/navbar',$dados);?>
   <div class="row">
   <div class="col-xs-12 col-sm-12 col-md-12">
     <h2 class="text-center">Alterar Cadastro</h2>

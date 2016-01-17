@@ -16,7 +16,8 @@ class Usuario_model extends MY_Model
     $senha = md5($senha);
 		$this->db->where('cpf',$cpf);
 		$this->db->where('senha',$senha);
-		return $this->db->get( $this->tabela )->result();
+    $usuario = $this->db->get($this->tabela);
+    return $usuario->first_row(); // RETORNA usuario
   }
 
   public function verificaCpf($cpf)
@@ -24,14 +25,7 @@ class Usuario_model extends MY_Model
     $cpf = preg_replace('/[^0-9]/','',$cpf);
     $this->db->where('cpf',$cpf);
     $query = $this->db->get( $this->tabela );
-    if($query->num_rows() > 0)
-    {
-      return $query->num_rows();
-    }
-    else
-    {
-      return false;
-    }
+    return $query->num_rows() > 0;
   }
 
   public function cadastro($dados)
@@ -44,7 +38,6 @@ class Usuario_model extends MY_Model
   # ALTERAÇÃO DE CADASTRO
   public function getById($id)
   {
-    $rows = array(); //esta variavel manterá todos os resultados
     $this->db->where('id',$id);
     $query = $this->db->get( $this->tabela );
     return $query->first_row();
@@ -52,7 +45,6 @@ class Usuario_model extends MY_Model
 
   public function getByEmail($email)
   {
-    $rows = array(); //esta variavel manterá todos os resultados
     $this->db->where('email',$email);
     $query = $this->db->get( $this->tabela );
     return $query->first_row();
@@ -61,14 +53,7 @@ class Usuario_model extends MY_Model
   public function email_check($str)
   {
     $query = $this->db->get_where( $this->tabela , array('email' => $str), 1);
-    if ($query->num_rows() == 1)
-    {
-      return true;
-    }
-    else
-    {
-      return false;
-    }
+    return $query->num_rows() == 1;
   }
 
   public function atualiza($id, $data)
