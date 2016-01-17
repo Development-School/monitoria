@@ -11,7 +11,7 @@ $this->load->view('head');//Chama a view head.html?>
   <div class="row">
   <div class="col-xs-12 col-sm-12 col-md-12">
     <h2 class="text-center">Alterar Cadastro</h2>
-    <?php echo form_open('admin/alteracadastro/altera','class="form-horizontal"'); ?>
+    <?php echo form_open('admin1/alteracadastro/altera','class="form-horizontal"'); ?>
     <div class="col-xs-12 col-sm-12 col-md-6">
       <div class="form-group">
         <?php
