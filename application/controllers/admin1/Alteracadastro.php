@@ -15,7 +15,7 @@ class Alteracadastro extends CI_Controller
   public function index()
   {
     $id = $this->session->userdata('id');
-    $dados['cursos'] = $this->usuario->get('tbl_cursos');
+    $dados['cursos'] = $this->usuario->getTabela('tbl_cursos');
     $dados['usuario'] = $this->usuario->getById($id);
     $this->load->view('admin1/alteracao_cadastro_view',$dados);
   }
@@ -34,11 +34,6 @@ class Alteracadastro extends CI_Controller
       $data['senha'] = $this->input->post('senha');
     }
     $id = $this->session->userdata('id');
-
-    echo "<pre>";
-    print_r ($data);
-    echo "</pre>";
-
     if ($this->usuario->atualiza($id, $data)) {
       redirect('admin1/paineladm');
     } else {

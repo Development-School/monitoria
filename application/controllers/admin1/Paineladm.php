@@ -14,7 +14,7 @@ class Paineladm extends CI_Controller
 
   public function index()
   {
-    $data['monitores'] = $this->monitor->getMonitores();
+    $data['monitores'] = $this->monitor->get();
     $this->load->view('admin1/home_view', $data);
   }
 }

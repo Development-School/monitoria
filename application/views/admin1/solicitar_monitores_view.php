@@ -2,88 +2,57 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 $this->load->view('head');//Chama a view head.html?>
 <title>Sistema Monitoria</title>
+<style type="text/css">
+  .user{
+    display: table;
+    width: 15rem;
+    margin-left: auto;
+    margin-right: auto;
+    border: .1rem solid black;
+    border-radius: 50%;
+    margin-bottom: 2rem;
+  }
+</style>
 </head>
 <body>
 <div id="wrap">
 <main class="container">
 	<?php /* Chama a View da Barra de navegação*/
-	$dados['ativo'] = 0; $this->load->view('admin/navbar',$dados);?>
+	$dados['ativo'] = 0; $this->load->view('admin1/navbar',$dados);?>
 	<div class="row">
-		<div class="col-xs-12 col-sm-12 col-md-12">
+    <div class="col-sm-4">
+      <div class="panel panel-default">
+      <div class="panel-body">
+        <img class="user" src="<?php echo base_url('assets/imgs/default-user.png') ?>">
+        <dl class="dl-horizontal pull-left">
+          <dt>Nome</dt>
+          <dd><?php echo $monitor->nome ?></dd>
+          <dt>Email</dt>
+          <dd><?php echo $monitor->email ?></dd>
+          <dt>Descrição</dt>
+          <dd><?php echo $monitor->descricao ?></dd>
+          <dt>Turno</dt>
+          <dd><?php echo $monitor->turno ?></dd>
+          <dt>Dias Disponiveis</dt>
+          <dd><?php echo $monitor->dia_semana ?></dd>
+        </dl>
+      </div>
+      </div>
+    </div>
+		<div class="col-xs-12 col-sm-8">
 			<div class="panel panel-default">
 			<div class="panel-heading">
-				<h3>Solicitar Monitor</h3>
+				<h3>Solicitar o Monitor <?php echo $monitor->nome ?></h3>
 			</div>
 			<div class="panel-body">
-	    <?php echo form_open('admin/alteracadastro/altera','class="form-horizontal"'); ?>
       <div class="form-group">
-      <?php
-        //Definição para o Bootstrap
-        $attlabel = array('class' => 'col-sm-2 control-label',);
-        $formgroup = '<div class="form-group">';
-        $taminput = '<div class="col-sm-10">';
-        $clss = 'class="form-control"';
-        $fimdiv = '</div></div>';
-
-        //Campo de Nome
-        echo $formgroup;
-        $att = array(
-          "type" => "text",
-          "name" => "nome",
-          "id" => "nome",
-          "value" => set_value('nome' ),
-          "class" => "form-control",
-          "placeholder" => "Digite seu nome",
-          "required" => ""
-        );
-        echo form_label('NOME','nome',$attlabel);
-        echo $taminput;
-        echo form_input($att);
-        echo form_error('nome');
-        echo $fimdiv;
-
-        //Campo de Nome
-        echo $formgroup;
-        $att = array(
-          "type" => "text",
-          "name" => "nome",
-          "id" => "nome",
-          "value" => set_value('nome' ),
-          "class" => "form-control",
-          "placeholder" => "Digite seu nome",
-          "required" => ""
-        );
-        echo form_label('NOME','nome',$attlabel);
-        echo $taminput;
-        echo form_input($att);
-        echo form_error('nome');
-        echo $fimdiv;
-
-        //Campo de Nome
-        echo $formgroup;
-        $att = array(
-          "type" => "text",
-          "name" => "nome",
-          "id" => "nome",
-          "value" => set_value('nome' ),
-          "class" => "form-control",
-          "placeholder" => "Digite seu nome",
-          "required" => ""
-        );
-        echo form_label('NOME','nome',$attlabel);
-        echo $taminput;
-        echo form_input($att);
-        echo form_error('nome');
-        echo $fimdiv;
-
-
-			?>
+        <label>Escreva uma Mensagem para o monitor</label>
+        <textarea rows="5" class="form-control"></textarea>
       </div>
-      <?php echo form_close(); ?>
+      <a href="#" class="btn btn-primary">Enviar Solicitação</a>
 			</div>
 			</div>
 		</div>
-
 	</div>
 </main>
 <?php $this->load->view('footer');//Chama a view footer

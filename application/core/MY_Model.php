@@ -5,17 +5,23 @@ class MY_Model extends CI_Model
 {
 	public $tabela;
 
-	public function get($tabela)
+  public function get($limit=null)
   {
-    return $this->db->get($tabela)->result();
+    ($limit != null) ? $this->db->limit($limit) : null;
+    $query = $this->db->get($this->tabela);
+    return  $query->result();
   }
 
   public function getBy($att, $id)
   {
-    $rows = array(); //esta variavel manterá todos os resultados
     $this->db->where( $att, $id );
     $query = $this->db->get( $this->tabela );
     return $query->first_row();
+  }
+
+  public function getTabela($tabela)
+  {
+    return  $this->db->get($tabela)->result();
   }
 
 }

@@ -1,27 +1,12 @@
-<?php $this->load->view('head');//Chama a view head.html?>
-
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+$this->load->view('head');//Chama a view head.html?>
 <title>Ajuda</title>
   <link rel="stylesheet" href="<?php echo base_url('assets/css/estilo.css') ?>" >
   <style>
-  .pdf {height:800px; width:100%;}
   .panel-warning>.panel-heading{
     background-image: linear-gradient(to bottom,#EFA843 0,#faf2cc 100%);
   }
-  .aviao{
-    width: 40%;
-    float: right;
-  }
-  @media (max-width: 768px) {
-    .aviao{
-      width: 50%;
-      float: left;
-      margin: auto 25%;
-    }
-    .contate{
-      text-align: center;
-    }
-  }
-
   </style>
 </head>
 <body>
@@ -30,9 +15,7 @@
   $dados['ativo'] = 6; $this->load->view('admin1/navbar',$dados);?>
   <div class="row">
   <div class="col-xs-12 col-sm-12 col-md-12">
-      <h2>Ajuda&nbsp;<i class="fa fa-question-circle fa-fw fa-lg"></i></h2>
-      <h3 style="text-align:center">Perguntas Frequentes:</h3>
-
+      <h3 style="text-align:center"><i class="fa fa-question-circle fa-fw fa-lg"></i> Perguntas Frequentes:</h3>
       <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
   <div class="panel panel-warning">
     <div class="panel-heading" role="tab" id="headingOne">
@@ -95,14 +78,9 @@
 </div>
   </div>
   </div>
-  <div class="col-xs-12 col-sm-6 col-md-6">
-    <img class="aviao" src="<?php echo base_url('assets/img/aviao.png') ?>" alt="Aviao">
+  <div class="text-center row">
+    <h3 class="contate">Contate-nos: <a href="mailto:semanatrans@gmail.com">semanatrans@gmail.com</a></h3>
   </div>
-  <div class="col-xs-12 col-sm-6 col-md-6">
-  <h3 class="contate">Contate-nos:</h3>
-  <a href="mailto:semanatrans@gmail.com">semanatrans@gmail.com</a>
-
-   </div>
 </div>
 
 

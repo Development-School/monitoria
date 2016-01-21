@@ -52,3 +52,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'Home';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+$route['admin1/Monitores/(:num)'] = 'admin1/Monitores/solicitar/$1';
+
+/* End of file routes.php */
+/* Location: ./application/config/routes.php */
