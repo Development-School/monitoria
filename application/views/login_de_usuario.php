@@ -87,7 +87,6 @@ $this->load->view('head');//Chama a view head.html?>
         </div>
         </div>
         <?php
-        echo form_fieldset_close();
         echo form_close();
         ?>
         </div>

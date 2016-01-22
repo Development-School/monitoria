@@ -2,14 +2,23 @@
   "private": true,
   "name": "monitoria",
   "version": "0.2.0",
+  "title": "Sistema de Monitoria Pitágoras",
+  "description": "Sistema de Monitoria da Faculdade Pitágoras São Luis",
+  "homepage":"http://rodrigoalves.me/monitoria",
+  "author":{
+    "name":"Escritório Escola da Faculdade Pitágoras",
+    "url":"https://github.com/esc2"
+    },
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-banner": "^0.6.0",
     "grunt-contrib-clean": "^0.7.0",
+    "grunt-contrib-cssmin": "^0.14.0",
     "grunt-contrib-imagemin": "^1.0.0",
     "grunt-contrib-less": "^1.1.0",
     "grunt-contrib-uglify": "^0.11.0",
     "grunt-ftpush": "^0.3.3",
+    "grunt-uncss": "^0.4.4",
     "imagemin-mozjpeg": "^5.1.0",
     "imagemin-pngquant": "^4.2.0"
   }

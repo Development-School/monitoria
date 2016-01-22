@@ -8,7 +8,7 @@ $this->load->view('head');//Chama a view head.html?>
     width: 15rem;
     margin-left: auto;
     margin-right: auto;
-    border: .1rem solid black;
+    border: .1rem solid #666;
     border-radius: 50%;
     margin-bottom: 2rem;
   }

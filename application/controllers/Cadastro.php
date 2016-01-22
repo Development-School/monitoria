@@ -11,7 +11,7 @@ class Cadastro extends CI_Controller
 
   public function index()
   {
-    $data['cursos'] = $this->usuarios->get('tbl_cursos');
+    $data['cursos'] = $this->usuarios->getTabela('tbl_cursos');
     $this->load->view('cadastro_usuario_view',$data);
   }
 
@@ -32,8 +32,7 @@ class Cadastro extends CI_Controller
     $this->form_validation->set_message('matches', 'Os campos de SENHA não são iguais!');
 
     if ($this->form_validation->run() == FALSE) {
-      $data['cursos'] = $this->usuarios->get('tbl_cursos');
-      $this->load->view('cadastro_usuario_view',$data);
+      $this->index();
     } else {
       //Recebe os dados da views
       $nome = $this->input->post('nome');
@@ -49,7 +48,7 @@ class Cadastro extends CI_Controller
 
       if ( $this->usuarios->verificaCpf($cpf) ) {
         $data['erro'] = "Usuario já Cadastrado";
-        $data['cursos'] = $this->usuarios->get('tbl_cursos');
+        $data['cursos'] = $this->usuarios->getTabela('tbl_cursos');
         $this->load->view('cadastro_usuario_view',$data);
       }
       else {

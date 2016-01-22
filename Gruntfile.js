@@ -10,6 +10,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-ftpush');
   grunt.loadNpmTasks('grunt-banner');
   grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-uncss');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
 
   // Project configuration.
   grunt.initConfig({
@@ -18,11 +20,11 @@ module.exports = function(grunt) {
     uglify: {
       main: {
         src: [
-              'assets/js/jquery-2.1.4.min.js',
-              'assets/js/bootstrap.js',
-              'assets/js/jquery.mask.min.js',
-              'assets/js/main.js'
-              ],
+          'assets/js/jquery-2.1.4.min.js',
+          'assets/js/bootstrap.js',
+          'assets/js/jquery.mask.min.js',
+          'assets/js/main.js'
+        ],
         dest: 'assets/js/main.min.js'
       }
     },
@@ -35,14 +37,46 @@ module.exports = function(grunt) {
         files: {
           "assets/css/estilo.css": "assets/less/estilo.less"
         }
-      },
-      minified: {
+      }
+    },
+
+    uncss: {
+      dist: {
         options: {
-          paths: ["css"],
-          cleancss: true
+          ignore : [
+            /form/,
+            /col/,
+            /open/,
+            /active/,
+            /#home/,
+            /input/,
+            /^.bg/,
+            '.hidden-xs',
+            '.clearfix',
+            '.alert',
+            'select',
+            'option',
+            'fieldset',
+            'legend'
+          ],
+          stylesheets  : ['../../../assets/css/estilo.css'],
+          ignoreSheets : [/fonts.googleapis/],
         },
         files: {
-          "assets/css/estilo.min.css": "assets/less/estilo.less"
+          src: ['application/views/**/*.php','http://monitoria/'],
+          dest: 'assets/css/estilo.min.css'
+        }
+      }
+    },
+
+    cssmin: {
+      options: {
+        shorthandCompacting: false,
+        roundingPrecision: -1
+      },
+      target: {
+        files: {
+          'assets/css/estilo.min.css' : 'assets/css/estilo.min.css'
         }
       }
     },
@@ -125,7 +159,7 @@ module.exports = function(grunt) {
   });
 
   // Default task(s).
-  grunt.registerTask('default', ['uglify', 'less']);
+  grunt.registerTask('default', ['uglify', 'less','uncss','cssmin','usebanner']);
   grunt.registerTask('img', 'imagemin');
   grunt.registerTask('cls', 'clean');
   grunt.registerTask('ftp', ['default','img','ftpush']);

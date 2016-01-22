@@ -3,6 +3,7 @@
 node_modules
 assets/imgs
 assets/css
+src
 
 .DS_Store
 Thumbs.db
